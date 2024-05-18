@@ -53,6 +53,10 @@ class DashboardView extends StatelessWidget {
                     icon: 'assets/icons/plus.png',
                     onTap: () {},
                   ),
+                  const SizedBox(height: 16),
+                  Divider(
+                    color: Colors.grey.shade300,
+                  ),
                   const SizedBox(height: 32),
                   Container(
                     decoration: BoxDecoration(
