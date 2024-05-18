@@ -31,7 +31,7 @@ class CustomTabBar extends StatelessWidget {
       children: labels
           .map<Widget>(
             (label) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(label),
             ),
           )
