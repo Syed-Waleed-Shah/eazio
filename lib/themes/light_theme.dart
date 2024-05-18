@@ -6,6 +6,7 @@ ThemeData lightTheme = ThemeData(
     appBarTheme: const AppBarTheme(
       scrolledUnderElevation: 0,
     ),
+    fontFamily: 'Inter',
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 24,

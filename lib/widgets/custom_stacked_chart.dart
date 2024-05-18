@@ -65,14 +65,18 @@ class CustomStackedChart extends StatelessWidget {
         majorGridLines: const MajorGridLines(width: 0),
         title: AxisTitle(
           text: label,
-          textStyle: Theme.of(context).textTheme.bodySmall,
+          textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
         ),
       ),
       primaryYAxis: NumericAxis(
           axisLine: const AxisLine(width: 0),
           title: AxisTitle(
             text: 'Attendance',
-            textStyle: Theme.of(context).textTheme.bodySmall,
+            textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
           ),
           labelFormat: '{value}',
           maximum: 1000,
