@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 ThemeData lightTheme = ThemeData(
     primaryColor: const Color(0xFF1E5BD7),
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+    appBarTheme: const AppBarTheme(
+      scrolledUnderElevation: 0,
+    ),
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 24,

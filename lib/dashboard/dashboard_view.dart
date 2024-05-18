@@ -7,7 +7,6 @@ import 'package:eazio/widgets/custom_tab_bar.dart';
 import 'package:eazio/widgets/insight_group.dart';
 import 'package:eazio/widgets/insight_item.dart';
 import 'package:eazio/widgets/insight_title.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatelessWidget {
@@ -17,7 +16,10 @@ class DashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset('assets/icons/logo.png'),
+        title: Image.asset(
+          'assets/icons/logo.png',
+          width: 130,
+        ),
         actions: const [
           CustomIconButton(asset: 'assets/icons/bell.png'),
           CustomIconButton(asset: 'assets/icons/message.png'),
