@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class CustomStackedChart extends StatelessWidget {
-  const CustomStackedChart({super.key, required this.chartData});
+  const CustomStackedChart(
+      {super.key, required this.chartData, required this.label});
 
   final List<AttendanceChartData> chartData;
+  final String label;
 
   List<StackedColumnSeries<AttendanceChartData, String>>
       _getStackedColumnSeries() {
+    LegendIconType legendIconType = LegendIconType.circle;
+    BorderRadius borderRadius = BorderRadius.circular(10);
+    double width = 0.5;
     return <StackedColumnSeries<AttendanceChartData, String>>[
       StackedColumnSeries<AttendanceChartData, String>(
         dataSource: chartData,
@@ -16,9 +21,9 @@ class CustomStackedChart extends StatelessWidget {
         yValueMapper: (AttendanceChartData attendance, _) => attendance.onTime,
         name: 'On-Time',
         color: Colors.green,
-        width: .5,
-        borderRadius: BorderRadius.circular(10),
-        legendIconType: LegendIconType.circle,
+        width: width,
+        borderRadius: borderRadius,
+        legendIconType: legendIconType,
       ),
       StackedColumnSeries<AttendanceChartData, String>(
         dataSource: chartData,
@@ -26,9 +31,9 @@ class CustomStackedChart extends StatelessWidget {
         yValueMapper: (AttendanceChartData attendance, _) => attendance.lates,
         name: 'Late',
         color: Colors.orange,
-        width: .5,
-        borderRadius: BorderRadius.circular(10),
-        legendIconType: LegendIconType.circle,
+        width: width,
+        borderRadius: borderRadius,
+        legendIconType: legendIconType,
       ),
       StackedColumnSeries<AttendanceChartData, String>(
         dataSource: chartData,
@@ -36,9 +41,9 @@ class CustomStackedChart extends StatelessWidget {
         yValueMapper: (AttendanceChartData attendance, _) => attendance.absents,
         name: 'Absents',
         color: Colors.red,
-        width: .5,
-        borderRadius: BorderRadius.circular(10),
-        legendIconType: LegendIconType.circle,
+        width: width,
+        borderRadius: borderRadius,
+        legendIconType: legendIconType,
       ),
     ];
   }
@@ -52,13 +57,14 @@ class CustomStackedChart extends StatelessWidget {
         iconHeight: 8,
         iconWidth: 8,
         alignment: ChartAlignment.far,
-        textStyle:
-            Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 14),
+        textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              fontSize: 14,
+            ),
       ),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
         title: AxisTitle(
-          text: 'This Week',
+          text: label,
           textStyle: Theme.of(context).textTheme.bodySmall,
         ),
       ),

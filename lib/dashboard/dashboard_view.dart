@@ -196,9 +196,6 @@ class DashboardView extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
-                      // border: Border.all(
-                      //   color: Colors.grey.shade300,
-                      // ),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.shade200,
@@ -236,28 +233,31 @@ class DashboardView extends StatelessWidget {
                             labels: const ['Today', 'This Week', 'This Month'],
                             selectedIndex: controller
                                 .attendanceSummaryTabSelectedIndex.value,
-                            onValueChanged: (index) {
-                              controller.changeAttendanceSummary(index);
-                            },
+                            onValueChanged: controller.changeAttendanceSummary,
                           );
                         }),
                         const Divider(),
                         Obx(() {
                           return CustomStackedChart(
                             chartData: controller.currentChartData.value,
+                            label: controller.currentChartLabel.value,
                           );
                         }),
                         const Divider(),
-                        const Padding(
-                          padding: EdgeInsets.all(16.0),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomButton(
                                 label: 'Learn more',
                                 showBorder: false,
+                                onTap: () {},
                               ),
-                              CustomButton(label: 'View full report'),
+                              CustomButton(
+                                label: 'View full report',
+                                onTap: () {},
+                              ),
                             ],
                           ),
                         ),

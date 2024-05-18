@@ -9,7 +9,7 @@ class CustomTabBar extends StatelessWidget {
 
   final List<String> labels;
   final int selectedIndex;
-  final void Function(int)? onValueChanged;
+  final void Function(int, String)? onValueChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CustomTabBar extends StatelessWidget {
       isSelected:
           List.generate(labels.length, (index) => index == selectedIndex),
       onPressed: (int index) {
-        onValueChanged?.call(index);
+        onValueChanged?.call(index, labels[index]);
       },
       children: labels
           .map<Widget>(
