@@ -27,10 +27,11 @@ class CustomButton extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: borderRadius,
-          border: Border.all(
-            color: Colors.grey.shade300,
-            width: showBorder ? 1 : 0,
-          ),
+          border: showBorder
+              ? Border.all(
+                  color: Colors.grey.shade300,
+                )
+              : null,
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

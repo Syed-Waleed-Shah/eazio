@@ -12,11 +12,11 @@ class GrowthWidget extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       margin: const EdgeInsets.symmetric(vertical: 6),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(6),
         color: Colors.white,
       ),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
         decoration: BoxDecoration(
           color: color.withOpacity(.2),
         ),

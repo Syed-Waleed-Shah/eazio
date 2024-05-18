@@ -6,6 +6,11 @@ class QuantityWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text(
+      quantity.toString(),
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: Colors.white,
+          ),
+    );
   }
 }

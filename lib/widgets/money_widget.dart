@@ -7,6 +7,11 @@ class MoneyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text(
+      '${money.currencyCode} ${money.amount}',
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: Colors.white,
+          ),
+    );
   }
 }

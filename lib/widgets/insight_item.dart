@@ -38,13 +38,15 @@ class InsightItem extends StatelessWidget {
               return MoneyWidget(
                 money: money!,
               );
-            } else {
+            } else if (quantity != null) {
               return QuantityWidget(
                 quantity: quantity!,
               );
             }
+            return const SizedBox.shrink();
           },
         ),
+        const SizedBox(height: 12),
         Text(
           label,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
