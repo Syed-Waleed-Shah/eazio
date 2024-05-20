@@ -170,7 +170,7 @@ class DashboardView extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 60),
+                                  SizedBox(width: 50),
                                   Flexible(
                                     child: InsightGroup(
                                       insightTitle: InsightTitle(
