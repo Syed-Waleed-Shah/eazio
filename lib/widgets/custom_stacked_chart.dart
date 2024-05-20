@@ -12,7 +12,6 @@ class CustomStackedChart extends StatelessWidget {
   List<StackedColumnSeries<AttendanceChartData, String>>
       _getStackedColumnSeries() {
     LegendIconType legendIconType = LegendIconType.circle;
-    BorderRadius borderRadius = BorderRadius.circular(10);
     double width = 0.5;
     return <StackedColumnSeries<AttendanceChartData, String>>[
       StackedColumnSeries<AttendanceChartData, String>(
@@ -22,7 +21,7 @@ class CustomStackedChart extends StatelessWidget {
         name: 'On-Time',
         color: Colors.green,
         width: width,
-        borderRadius: borderRadius,
+        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(20)),
         legendIconType: legendIconType,
       ),
       StackedColumnSeries<AttendanceChartData, String>(
@@ -32,7 +31,6 @@ class CustomStackedChart extends StatelessWidget {
         name: 'Late',
         color: Colors.orange,
         width: width,
-        borderRadius: borderRadius,
         legendIconType: legendIconType,
       ),
       StackedColumnSeries<AttendanceChartData, String>(
@@ -42,7 +40,7 @@ class CustomStackedChart extends StatelessWidget {
         name: 'Absents',
         color: Colors.red,
         width: width,
-        borderRadius: borderRadius,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         legendIconType: legendIconType,
       ),
     ];
